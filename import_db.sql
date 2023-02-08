@@ -113,23 +113,35 @@ VALUES
     "red"
   ),
   (
+    (SELECT id FROM questions WHERE title = 'Date'),
+    (SELECT id FROM users WHERE fname = 'Dwayne'),
+    NULL,
+    "2-8-23"
+  );
+
+INSERT INTO
+  replies (question_id, user_id, parent_id, body)
+VALUES
+  (
     (SELECT id FROM questions WHERE title = 'Sky'),
     (SELECT id FROM users WHERE fname = 'Will'),
     (SELECT id FROM replies WHERE body = 'red'),
     "No, it's pink"
-  ),
+  );
+
+INSERT INTO
+  replies (question_id, user_id, parent_id, body)
+VALUES
   (
     (SELECT id FROM questions WHERE title = 'Sky'),
     (SELECT id FROM users WHERE fname = 'Vin'),
     (SELECT id FROM replies WHERE body = "No, it's pink"),
     "No, it's flat"
-  ),
-  (
-    (SELECT id FROM questions WHERE title = 'Date'),
-    (SELECT id FROM users WHERE fname = 'Dwayne'),
-    NULL,
-    "2-8-23"
-  ),
+  );
+
+INSERT INTO
+  replies (question_id, user_id, parent_id, body)
+VALUES
   (
     (SELECT id FROM questions WHERE title = 'Date'),
     (SELECT id FROM users WHERE fname = 'Tom' AND lname = 'Holland'),
